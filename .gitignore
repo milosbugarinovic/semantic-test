@@ -1,0 +1,8 @@
+node_modules
+coverage
+.nyc_output
+*.log
+.vscode
+.idea
+!.idea/runConfigurations
+src/test/node_modules
