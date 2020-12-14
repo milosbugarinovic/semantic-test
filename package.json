@@ -30,6 +30,7 @@
     "eslint-config-prettier": "7.0.0",
     "eslint-plugin-import": "2.22.1",
     "prettier": "2.2.1",
+    "replace-json-property": "1.6.3",
     "rimraf": "3.0.2",
     "semantic-release": "17.3.0",
     "ts-node": "9.1.1",
@@ -63,14 +64,15 @@
   },
   "scripts": {
     "audit": "npm audit --json | npx npm-audit-helper",
+    "bump-version": "rjp package.json version $VERSION",
     "commit": "git-cz",
+    "eslint": "eslint . --ext .js --quiet",
     "lint": "npm run eslint && npm run prettier",
+    "preinstall": "npx npm-force-resolutions",
     "prettier": "prettier --check \"./src/**/*.{js,json}\"",
     "prettier:fix": "prettier --write \"./src/**/*.{js,json}\"",
-    "eslint": "eslint . --ext .js --quiet",
-    "preinstall": "npx npm-force-resolutions",
     "semantic-release": "semantic-release",
-    "semantic-release:check": "npm run semantic-release -- --dry-run --no-ci",
+    "semantic-release:check": "npm run semantic-release -- --dry-run --no-ci --debug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "version": "0.0.0"

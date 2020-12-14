@@ -1,10 +1,20 @@
 {
   "branches": [
-    "main",
+    "release/production",
     {
-      "name": "release/alpha*",
+      "name": "main",
+      "channel": "dev",
+      "prerelease": "dev"
+    },
+    {
+      "name": "release/alpha",
       "channel": "alpha",
       "prerelease": "alpha"
+    },
+    {
+      "name": "release/beta",
+      "channel": "beta",
+      "prerelease": "beta"
     }
   ],
   "plugins": [
@@ -27,5 +37,5 @@
     ]
   ],
   "preset": "angular",
-  "repositoryUrl": "https://github.com/milosbugarinovic/semantic-test"
+  "repositoryUrl": "git@github.com:milosbugarinovic/semantic-test.git"
 }
