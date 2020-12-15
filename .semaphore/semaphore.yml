@@ -28,6 +28,6 @@ promotions:
   - name: Alpha Deploy
     pipeline_file: alpha.yml
     auto_promote:
-      when: tag = '^v\d+\.\d+\.\d+-alpha\.\d+$' AND result = 'passed'
+      when: tag =~ '^v\d+\.\d+\.\d+-alpha\.\d+$' AND result = 'passed'
   - name: Production Deploy
     pipeline_file: production.yml
