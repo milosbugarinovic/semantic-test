@@ -1,0 +1,21 @@
+version: v1.0
+name: Alpha Deploy
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Deploy
+    task:
+      secrets:
+        - name: mb-semantic-test-secret
+      jobs:
+        - name: Deploy
+          commands:
+            - sem-version node 14.15.1
+            - checkout
+            - npm ci
+            - VERSION=${SEMAPHORE_GIT_TAG_NAME:1} npm run bump-version
+            - npm publish -tag alpha
+    skip:
+      when: tag !~ '^v\d+\.\d+\.\d+-alpha\.\d+$'

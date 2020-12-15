@@ -5,20 +5,29 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Install-Lint-Test
+  - name: Test
+    task:
+      jobs:
+        - name: Test
+          commands:
+            - echo 'Test passed'
+  - name: Bump Version
     task:
       secrets:
         - name: mb-semantic-test-secret
-      env_vars:
-        - name: NODE_ENV
-          value: test
       jobs:
-        - name: Test
+        - name: Bump Version
           commands:
             - sem-version node 14.15.1
             - checkout
             - npm ci
-            - cache store
             - npm run semantic-release
     skip:
-      when: branch !~ '^release\/' AND branch != 'main'
+      when: branch != 'main'
+promotions:
+  - name: Alpha Deploy
+    pipeline_file: alpha.yml
+    auto_promote:
+      when: tag = '^v\d+\.\d+\.\d+-alpha\.\d+$' AND result = 'passed'
+  - name: Production Deploy
+    pipeline_file: production.yml
