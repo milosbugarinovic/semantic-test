@@ -15,6 +15,7 @@ blocks:
             - sem-version node 14.15.1
             - checkout
             - npm ci
-            - VERSION=${SEMAPHORE_GIT_TAG_NAME:1}-alpha npm run bump-version
-            - git tag ${SEMAPHORE_GIT_TAG_NAME}-alpha && git push origin --tags
+            - PACKAGE_VERSION=$(cat package.json | grep '"version": ' | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]')
+            - VERSION=${PACKAGE_VERSION}-alpha npm run bump-version
+            - git tag v${PACKAGE_VERSION}-alpha && git push origin --tags
             - npm publish -tag alpha
