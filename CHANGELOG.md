@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/milosbugarinovic/semantic-test/compare/v1.0.0...v1.0.1) (2020-12-15)
+
+
+### Bug Fixes
+
+* code ([776fbc7](https://github.com/milosbugarinovic/semantic-test/commit/776fbc707d1933584df9d2e66c949d09d9a4a5c1))
+
 # 1.0.0 (2020-12-15)
 
 
