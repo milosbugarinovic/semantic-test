@@ -15,7 +15,4 @@ blocks:
             - sem-version node 14.15.1
             - checkout
             - npm ci
-            - VERSION=${SEMAPHORE_GIT_TAG_NAME:1} npm run bump-version
             - npm publish
-    skip:
-      when: tag !~ '^v\d+\.\d+\.\d+$'

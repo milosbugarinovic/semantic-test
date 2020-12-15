@@ -15,7 +15,6 @@ blocks:
             - sem-version node 14.15.1
             - checkout
             - npm ci
-            - VERSION=${SEMAPHORE_GIT_TAG_NAME:1} npm run bump-version
+            - VERSION=${SEMAPHORE_GIT_TAG_NAME:1}-alpha npm run bump-version
+            - git tag ${SEMAPHORE_GIT_TAG_NAME}-alpha && git push origin --tags
             - npm publish -tag alpha
-    skip:
-      when: tag !~ '^v\d+\.\d+\.\d+-alpha\.\d+$'
