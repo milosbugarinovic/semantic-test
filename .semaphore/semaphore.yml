@@ -1,0 +1,24 @@
+version: v1.0
+name: Test
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Install-Lint-Test
+    task:
+      secrets:
+        - name: mb-semantic-test-secret
+      env_vars:
+        - name: NODE_ENV
+          value: test
+      jobs:
+        - name: Test
+          commands:
+            - sem-version node 14.15.1
+            - checkout
+            - npm ci
+            - cache store
+            - npm run semantic-release
+    skip:
+      when: branch !~ '^release\/' AND branch != 'main'
