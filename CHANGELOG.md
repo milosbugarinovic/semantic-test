@@ -1,3 +1,10 @@
+## [1.1.10](https://github.com/milosbugarinovic/semantic-test/compare/v1.1.9...v1.1.10) (2020-12-16)
+
+
+### Bug Fixes
+
+* do not checkout current branch on aplpha ([55da00c](https://github.com/milosbugarinovic/semantic-test/commit/55da00c4bd3d210bb567e0bdb3c7e442ac3269d7))
+
 ## [1.1.9](https://github.com/milosbugarinovic/semantic-test/compare/v1.1.8...v1.1.9) (2020-12-16)
 
 
