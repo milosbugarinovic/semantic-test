@@ -24,4 +24,4 @@ blocks:
             - npm ci
             - npm run bump-version
             - git tag v$VERSION && git push origin --tags
-            - npm publish -tag alpha
+#            - npm publish -tag alpha

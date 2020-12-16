@@ -20,8 +20,8 @@ blocks:
             - git remote rm origin
             - git remote add origin https://$GH_USER:$GH_TOKEN@github.com/milosbugarinovic/semantic-test.git
             - git checkout tags/v$VERSION -b tmp-branch
-            - npm ci
-            - npm publish
+#            - npm ci
+#            - npm publish
             - export VERSION=$VERSION-prod
             - git tag v$VERSION && git push origin --tags
 
