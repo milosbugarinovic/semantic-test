@@ -13,11 +13,11 @@ blocks:
         - name: Deploy
           commands:
             - sem-version node 14.15.1
-            - checkout
             - cache restore version-$SEMAPHORE_GIT_SHA
             - export $(cat version.txt)-alpha
             - rm version.txt
-            - git remote rm origin && git remote add origin https://milosbugarinovic:$GH_TOKEN@github.com/milosbugarinovic/semantic-test.git
+            - git init
+            - git remote add origin https://milosbugarinovic:$GH_TOKEN@github.com/milosbugarinovic/semantic-test.git
             - git checkout tags/v$VERSION -b tmp-branch
             - npm ci
             - npm run bump-version
