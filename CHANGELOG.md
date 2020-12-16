@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/milosbugarinovic/semantic-test/compare/v1.1.8...v1.1.9) (2020-12-16)
+
+
+### Bug Fixes
+
+* final ([417aac0](https://github.com/milosbugarinovic/semantic-test/commit/417aac0ca347a3c1d169b0b9e3614fd7323dd09e))
+
 ## [1.1.8](https://github.com/milosbugarinovic/semantic-test/compare/v1.1.7...v1.1.8) (2020-12-16)
 
 
