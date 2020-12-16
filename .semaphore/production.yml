@@ -22,7 +22,6 @@ blocks:
             - git checkout tags/v$VERSION -b tmp-branch
 #            - npm ci
 #            - npm publish
-            - export VERSION=$VERSION-prod
-            - git tag v$VERSION && git push origin --tags
+            - git tag v$VERSION-prod && git push origin --tags
 
 

@@ -64,7 +64,7 @@
   },
   "scripts": {
     "audit": "npm audit --json | npx npm-audit-helper",
-    "bump-version": "rjp package.json version $VERSION",
+    "bump-version": "rjp package.json version",
     "commit": "git-cz",
     "eslint": "eslint . --ext .js --quiet",
     "lint": "npm run eslint && npm run prettier",
