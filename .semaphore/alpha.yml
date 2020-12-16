@@ -14,11 +14,12 @@ blocks:
           commands:
             - sem-version node 14.15.1
             - cache restore version-$SEMAPHORE_GIT_SHA
-            - export $(cat version.txt)-alpha
+            - export $(cat version.txt)
             - rm version.txt
             - git init
-            - git remote add origin https://milosbugarinovic:$GH_TOKEN@github.com/milosbugarinovic/semantic-test.git
+            - git remote add origin https://$GH_USER:$GH_TOKEN@github.com/milosbugarinovic/semantic-test.git
             - git checkout tags/v$VERSION -b tmp-branch
+            - export VERSION=$VERSION-alpha
             - npm ci
             - npm run bump-version
             - git tag v$VERSION && git push origin --tags
