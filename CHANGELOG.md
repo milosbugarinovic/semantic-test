@@ -1,3 +1,10 @@
+## [1.1.16](https://github.com/milosbugarinovic/semantic-test/compare/v1.1.15...v1.1.16) (2020-12-16)
+
+
+### Bug Fixes
+
+* prod fix 2 ([b5628d4](https://github.com/milosbugarinovic/semantic-test/commit/b5628d4579b5af9692659f40ced5aaed7cb1c2f4))
+
 ## [1.1.15](https://github.com/milosbugarinovic/semantic-test/compare/v1.1.14...v1.1.15) (2020-12-16)
 
 
