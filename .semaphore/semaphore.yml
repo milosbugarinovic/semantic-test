@@ -23,7 +23,7 @@ blocks:
             - npm ci
             - npm run semantic-release
             - echo VERSION=$VERSION > version.txt
-            - echo version.txt
+            - cat version.txt
             - cache store version-$SEMAPHORE_GIT_SHA version.txt
     skip:
       when: branch != 'main'

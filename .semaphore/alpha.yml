@@ -13,6 +13,7 @@ blocks:
         - name: Deploy
           commands:
             - sem-version node 14.15.1
+            - checkout
             - cache restore version-$SEMAPHORE_GIT_SHA
             - export $(cat version.txt)
             - rm version.txt
