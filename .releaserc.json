@@ -6,7 +6,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "VERSION=${nextRelease.version} npm run bump-version"
+        "prepareCmd": "export VERSION=${nextRelease.version} && npm run bump-version"
       }
     ],
     "@semantic-release/changelog",
