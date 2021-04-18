@@ -67,6 +67,7 @@
     "bump-version": "rjp package.json version",
     "commit": "git-cz",
     "eslint": "eslint . --ext .js --quiet",
+    "build": "echo BuildDONE",
     "lint": "npm run eslint && npm run prettier",
     "preinstall": "npx npm-force-resolutions",
     "prettier": "prettier --check \"./src/**/*.{js,json}\"",
