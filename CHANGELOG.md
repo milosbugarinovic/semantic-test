@@ -1,3 +1,10 @@
+## [1.1.17](https://github.com/milosbugarinovic/semantic-test/compare/v1.1.16...v1.1.17) (2021-04-18)
+
+
+### Bug Fixes
+
+* update script ([0241edd](https://github.com/milosbugarinovic/semantic-test/commit/0241edd41c063e146638d5cdc0e7b4f4ea59a3ae))
+
 ## [1.1.16](https://github.com/milosbugarinovic/semantic-test/compare/v1.1.15...v1.1.16) (2020-12-16)
 
 
