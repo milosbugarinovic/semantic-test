@@ -11,7 +11,7 @@ blocks:
   - name: Install-Lint-Test
     task:
       secrets:
-#        - name: bc-git-secret
+        - name: bc-git-secret
 #        - name: bc-npm-secret
         - name: mb-semantic-test-secret
       env_vars:
@@ -32,7 +32,7 @@ blocks:
   - name: Bump Version
     task:
       secrets:
-#        - name: bc-git-secret
+        - name: bc-git-secret
 #        - name: bc-npm-secret
         - name: mb-semantic-test-secret
       jobs:

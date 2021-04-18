@@ -11,7 +11,7 @@ blocks:
   - name: Deploy to Alpha
     task:
       secrets:
-#        - name: bc-git-secret
+        - name: bc-git-secret
 #        - name: bc-npm-secret
         - name: mb-semantic-test-secret
       jobs:
