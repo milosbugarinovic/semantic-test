@@ -1,5 +1,5 @@
 version: v1.0
-name: Alpha Deploy
+name: Prod Deploy
 agent:
   machine:
     type: e1-standard-2
@@ -8,7 +8,7 @@ agent:
     - name: main
       image: 'registry.semaphoreci.com/node:14'
 blocks:
-  - name: Deploy to Alpha
+  - name: Deploy to Production
     task:
       secrets:
 #        - name: bc-git-secret
@@ -23,13 +23,12 @@ blocks:
             - checkout
             - git remote rm origin
             - git remote add origin https://$GH_USER:$GH_TOKEN@github.com/milosbugarinovic/semantic-test.git
-            - git checkout tags/v$VERSION -b tmp-alpha-branch
+            - git checkout tags/v$VERSION -b tmp-prod-branch
             - npm ci
             - npm run build
-            - npm run bump-version -- $VERSION-alpha
-            - git tag v$VERSION-alpha && git push origin --tags
+            - git tag v$VERSION-prod && git push origin --tags
 #            - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
 #            - npm config set unsafe-perm true
-#            - npm publish --access public -tag alpha
+#            - npm publish --access public
     skip:
       when: branch != 'main'
