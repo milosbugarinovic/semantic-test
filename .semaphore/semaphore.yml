@@ -20,9 +20,9 @@ blocks:
       jobs:
         - name: Test
           commands:
-#            - checkout
-#            - npm ci
-#            - cache store
+            - checkout
+            - npm ci
+            - cache store
 #            - npm run eslint
 #            - npm run prettier
 #            - npm run coverage
